@@ -1,32 +1,39 @@
 function getFactorial (array,int) {
 
     let factorialArray = []
-    let factorial = 1;
+   
     for (let index = 0; index < array.length; index++) {
         const dividedElement = array[index];
-        console.log(dividedElement);
-
+        // console.log(dividedElement);
+        let factorial = 1;
         for (let j = dividedElement; j >= 1; j--) {
-          
              factorial = factorial * j ;
+             
              
             
         }
         factorialArray.push(factorial)
+      
         
     }
-    return factorialArray
+   
+let largestNumber = 0;
+// console.log(factorialArray);
+for (let i = 0; i < factorialArray.length; i++) {
+    const element = factorialArray[i];
+    // console.log(element);
 
-
-}
-console.log(getFactorial([2,5,3,4],2));
-
-let factorial5 = 1;
-// for (let i = 1; i <= 5; i++) {
-//     factorial5 = factorial5 * i;
-// }
-for (let i = 5; i >= 1; i--) {
-    factorial5 = factorial5 * i ;
+    if (element > largestNumber) {
+        largestNumber = factorialArray[i]
+   
+    }
+    
     
 }
-console.log(factorial5);
+
+    return largestNumber
+
+
+}
+console.log(getFactorial([2,5,3,4,10],2));
+
